@@ -1,0 +1,12 @@
+image: openjdk:11-jdk
+
+variables:
+  TEST_SCRIPT_ID: 1835951
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - "curl -sSL https://gitlab.com/api/v4/snippets/$TEST_SCRIPT_ID/raw?private_token=$ACCESS_TOKEN_N1KS0 | tr -d '\r' | sh"
